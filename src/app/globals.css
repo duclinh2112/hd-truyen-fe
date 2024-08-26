@@ -3,27 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg-primary-light: #F0F1F3;
+  --bg-primary-dark: #222;
+  --bg-black: #000000;
+  --bg-success: #EBF7E8;
+  --bg-warning: #FBFFCE;
+  --bg-in-progress: #DCFBFF;
+
+  --color-success: #34AB16;
+  --color-warning: #99A700;
+  --color-in-progress: #29B2C5;
+  
+  --background-light: var(--bg-primary-light);
+  --background-card-light: #fff;
+  --background-header-light: var(--bg-black);
+  --background-footer-light: var(--bg-black);
+  --text-primary-light: var(--bg-black);
+  --text-title-light: #2A313A;
+  --text-blue-light: #64748B;
+
+  --background-dark: var(--bg-primary-dark);
+  --background-card-dark: var(--bg-black);
+  --background-header-dark: var(--bg-primary-light);
+  --background-footer-dark: var(--bg-primary-light);
+  --text-primary-dark: var(--bg-primary-light);
+  --text-title-dark: #fff;
+  --text-blue-dark: #64748B;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme='light'] {
+  --background: var(--background-light);
+  --background-card: var(--background-card-light);
+  --background-header: var(--background-header-light);
+  --background-footer: var(--background-footer-light);
+  --text-primary: var(--text-primary-light);
+  --text-header: var(--background-light);
+  --text-title: var(--text-title-light);
+  --text-blue: var(--text-blue-light);
+}
+
+[data-theme='dark'] {
+  --background-card: var(--background-card-dark);
+  --background: var(--background-dark);
+  --background-header: var(--background-header-dark);
+  --background-footer: var(--background-footer-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-header: var(--background-dark);
+  --text-title: var(--text-title-dark);
+  --text-blue: var(--text-blue-dark);
+}
+
+html {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text-primary);
+  background: var(--background);
+  font-size: 16px;
+}
+
+.swiper .swiper-slide {
+  transform: scale(0.97) translateZ(0) !important;
+  transition: transform 0.25s;
+}
+
+.swiper .swiper-slide-active {
+  transform: scale(1)  translateZ(0) !important;
+}
+
+#pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#pagination .swiper-pagination-bullet {
+  background: #64748B;
+  opacity: 1;
+}
+
+#pagination .swiper-pagination-bullet.bullet-active {
+  background: #D9D9D9;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 @layer utilities {
