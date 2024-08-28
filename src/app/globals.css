@@ -89,6 +89,11 @@ body {
   background: #D9D9D9;
 }
 
+div ul {
+  list-style: disc;
+  padding-left: 24px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

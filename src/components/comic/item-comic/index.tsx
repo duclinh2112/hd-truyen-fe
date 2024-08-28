@@ -14,7 +14,7 @@ const ItemComic = ({ item }: ItemComicProps) => {
   const { title, slug, image, view } = item
   return (
     <div>
-      <Link href={slug} className='relative'>
+      <Link href={`/p/${slug}`} className='relative'>
         <ImageWrap
           src={`/assets/images/${image.name}`}
           alt={title}
@@ -29,7 +29,7 @@ const ItemComic = ({ item }: ItemComicProps) => {
         </div>
       </Link>
       <div className='mt-2'>
-        <Link href={slug}>
+        <Link href={`/p/${slug}`}>
           <span className='line-clamp-2 text-[14px] font-medium leading-[24px] text-main'>
             {title}
           </span>
