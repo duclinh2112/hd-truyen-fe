@@ -49,7 +49,7 @@ const SidebarTop = () => {
                 >
                   {(idx + 1).toString().padStart(2, '0')}
                 </div>
-                <div>
+                <div className='flex-1'>
                   <Link href={item.slug} className='hover:underline'>
                     {item.title}
                   </Link>

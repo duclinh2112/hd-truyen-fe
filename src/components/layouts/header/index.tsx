@@ -26,7 +26,7 @@ const Header = () => {
             </Link>
           </div>
           <div>
-            <ul className='flex items-center gap-10'>
+            <ul className='flex list-none items-center gap-10 pl-0'>
               {NAVIGATION.map((item, key) => {
                 const active = pathname.split('/', 2).join('/') === item.path
                 return (
